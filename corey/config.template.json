@@ -31,7 +31,7 @@
     "telegram": {
       "enabled": true,
       "botToken": "${TELEGRAM_BOT_TOKEN}",
-      "allowFrom": ["coreyortea", "jacobshan", "shibatoshi"],
+      "allowFrom": [6004844659],
       "dmPolicy": "allowlist"
     },
     "discord": {
