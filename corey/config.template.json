@@ -1,0 +1,70 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/home/node/.openclaw/workspace",
+      "model": {
+        "primary": "anthropic/claude-sonnet-4-6"
+      },
+      "sandbox": {
+        "mode": "off"
+      },
+      "heartbeat": {
+        "every": "30m",
+        "target": "last"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "anthropic": {
+        "baseUrl": "http://host.docker.internal:8765",
+        "apiKey": "${ANTHROPIC_API_KEY}",
+        "models": [
+          { "id": "claude-sonnet-4-6", "name": "Claude Sonnet 4.6", "contextWindow": 200000, "maxTokens": 16384 },
+          { "id": "claude-opus-4-6", "name": "Claude Opus 4.6", "contextWindow": 200000, "maxTokens": 16384 },
+          { "id": "claude-haiku-4-6", "name": "Claude Haiku 4.6", "contextWindow": 200000, "maxTokens": 16384 }
+        ]
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
+      "allowFrom": ["coreyortea", "jacobshan", "shibatoshi"],
+      "dmPolicy": "allowlist"
+    },
+    "discord": {
+      "enabled": false
+    },
+    "line": {
+      "enabled": false
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true
+      }
+    }
+  },
+  "gateway": {
+    "port": 18790,
+    "bind": "lan",
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "${GATEWAY_TOKEN}"
+    },
+    "controlUi": {
+      "enabled": true
+    }
+  },
+  "web": {
+    "enabled": true
+  },
+  "logging": {
+    "level": "info",
+    "consoleStyle": "compact"
+  }
+}
