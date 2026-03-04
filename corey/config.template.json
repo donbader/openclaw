@@ -1,4 +1,7 @@
 {
+  "env": {
+    "TAVILY_API_KEY": "${TAVILY_API_KEY}"
+  },
   "agents": {
     "defaults": {
       "workspace": "/home/node/.openclaw/workspace",
