@@ -92,7 +92,7 @@
     "ackReactionScope": "all"
   },
   "logging": {
-    "level": "info",
+    "level": "debug",
     "consoleStyle": "compact"
   }
 }
