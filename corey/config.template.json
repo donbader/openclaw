@@ -32,7 +32,8 @@
       "enabled": true,
       "botToken": "${TELEGRAM_BOT_TOKEN}",
       "allowFrom": [6004844659],
-      "dmPolicy": "allowlist"
+      "dmPolicy": "allowlist",
+      "ackReaction": "⚡"
     },
     "discord": {
       "enabled": false
