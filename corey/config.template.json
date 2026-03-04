@@ -10,8 +10,8 @@
       },
       "heartbeat": {
         "every": "30m",
-        "target": "last"
-      }
+        "target": "last",
+        "activeHours": { "start": "08:00", "end": "23:00", "timezone": "Asia/Taipei" }
     }
   },
   "models": {
@@ -63,6 +63,12 @@
   },
   "web": {
     "enabled": true
+  },
+  "ui": {
+    "assistant": { "name": "Claw", "avatar": "⚡" }
+  },
+  "messages": {
+    "ackReactionScope": "all"
   },
   "logging": {
     "level": "info",
