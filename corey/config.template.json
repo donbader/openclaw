@@ -3,7 +3,7 @@
     "defaults": {
       "workspace": "/home/node/.openclaw/workspace",
       "model": {
-        "primary": "anthropic/claude-sonnet-4-6"
+        "primary": "rkgw/claude-sonnet-4-6"
       },
       "sandbox": {
         "mode": "off"
@@ -21,7 +21,7 @@
   },
   "models": {
     "providers": {
-      "anthropic": {
+      "rkgw": {
         "baseUrl": "http://host.docker.internal:8765/v1",
         "api": "openai-completions",
         "apiKey": "${ANTHROPIC_API_KEY}",
