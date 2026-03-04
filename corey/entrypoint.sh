@@ -15,10 +15,11 @@ for dir in "${OPENCLAW_HOME}" "${OPENCLAW_HOME}/canvas" "${OPENCLAW_HOME}/cron" 
   mkdir -p "$dir" 2>/dev/null || true
 done
 
-# Seed workspace from image on first run
-if [ ! -d "${OPENCLAW_HOME}/workspace" ]; then
-  cp -r /opt/openclaw-workspace "${OPENCLAW_HOME}/workspace"
-  echo "[entrypoint] Seeded workspace from image"
+# Seed workspace on first run; overwrite when RESET_WORKSPACE=1
+if [ ! -d "${OPENCLAW_HOME}/workspace" ] || [ "${RESET_WORKSPACE:-}" = "1" ]; then
+  cp -rf /opt/openclaw-workspace/* "${OPENCLAW_HOME}/workspace/" 2>/dev/null || \
+    cp -r /opt/openclaw-workspace "${OPENCLAW_HOME}/workspace"
+  echo "[entrypoint] Workspace synced from image"
 fi
 
 # Render config template with env var substitution
