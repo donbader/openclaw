@@ -11,7 +11,11 @@
       "heartbeat": {
         "every": "30m",
         "target": "last",
-        "activeHours": { "start": "08:00", "end": "23:00", "timezone": "Asia/Taipei" }
+        "activeHours": {
+          "start": "08:00",
+          "end": "23:00",
+          "timezone": "Asia/Taipei"
+        }
       }
     }
   },
@@ -21,9 +25,24 @@
         "baseUrl": "http://host.docker.internal:8765",
         "apiKey": "${ANTHROPIC_API_KEY}",
         "models": [
-          { "id": "claude-sonnet-4-6", "name": "Claude Sonnet 4.6", "contextWindow": 200000, "maxTokens": 16384 },
-          { "id": "claude-opus-4-6", "name": "Claude Opus 4.6", "contextWindow": 200000, "maxTokens": 16384 },
-          { "id": "claude-haiku-4-6", "name": "Claude Haiku 4.6", "contextWindow": 200000, "maxTokens": 16384 }
+          {
+            "id": "claude-sonnet-4-6",
+            "name": "Claude Sonnet 4.6",
+            "contextWindow": 200000,
+            "maxTokens": 16384
+          },
+          {
+            "id": "claude-opus-4-6",
+            "name": "Claude Opus 4.6",
+            "contextWindow": 200000,
+            "maxTokens": 16384
+          },
+          {
+            "id": "claude-haiku-4-6",
+            "name": "Claude Haiku 4.6",
+            "contextWindow": 200000,
+            "maxTokens": 16384
+          }
         ]
       }
     }
@@ -51,7 +70,7 @@
     }
   },
   "gateway": {
-    "port": 18790,
+    "port": 18789,
     "bind": "lan",
     "mode": "local",
     "auth": {
@@ -61,7 +80,7 @@
     "controlUi": {
       "enabled": true,
       "allowInsecureAuth": true,
-      "allowedOrigins": ["http://localhost:18790", "http://127.0.0.1:18790"]
+      "allowedOrigins": ["http://localhost:18789", "http://127.0.0.1:18789"]
     }
   },
   "web": {
