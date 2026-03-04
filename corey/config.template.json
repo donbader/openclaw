@@ -22,8 +22,8 @@
   "models": {
     "providers": {
       "rkgw": {
-        "baseUrl": "http://host.docker.internal:8765/v1",
-        "api": "openai-completions",
+        "baseUrl": "http://host.docker.internal:8765",
+        "api": "anthropic-messages",
         "apiKey": "${ANTHROPIC_API_KEY}",
         "models": [
           {
