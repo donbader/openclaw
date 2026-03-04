@@ -1,5 +1,6 @@
 {
   "env": {
+    "_comment": "Env vars injected into agent runtime (skills pick these up)",
     "TAVILY_API_KEY": "${TAVILY_API_KEY}"
   },
   "agents": {
@@ -12,6 +13,7 @@
         "mode": "off"
       },
       "heartbeat": {
+        "_comment": "Heartbeat uses Haiku to save cost; runs during Taipei daytime only",
         "every": "30m",
         "target": "last",
         "model": "rkgw/claude-haiku-4-6",
@@ -26,6 +28,7 @@
   "models": {
     "providers": {
       "rkgw": {
+        "_comment": "Models proxied through local rkgw gateway on host",
         "baseUrl": "http://host.docker.internal:8765",
         "api": "anthropic-messages",
         "apiKey": "${ANTHROPIC_API_KEY}",
@@ -70,7 +73,8 @@
   "tools": {
     "web": {
       "search": {
-        "enabled": true
+        "_comment": "Built-in Brave search disabled; using Tavily skill instead",
+        "enabled": false
       }
     }
   },
