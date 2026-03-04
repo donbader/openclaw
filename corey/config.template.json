@@ -59,7 +59,8 @@
       "token": "${GATEWAY_TOKEN}"
     },
     "controlUi": {
-      "enabled": true
+      "enabled": true,
+      "allowedOrigins": ["http://localhost:18790", "http://127.0.0.1:18790"]
     }
   },
   "web": {
