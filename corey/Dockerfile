@@ -24,6 +24,7 @@ USER node
 COPY --chown=node:node config.template.json /config.template.json
 COPY --chown=node:node entrypoint.sh /entrypoint.sh
 COPY --chown=node:node workspace/ /opt/openclaw-workspace/
+COPY --chown=node:node skills/ /opt/openclaw-skills/
 
 RUN chmod +x /entrypoint.sh
 

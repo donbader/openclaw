@@ -22,6 +22,13 @@ if [ ! -d "${OPENCLAW_HOME}/workspace" ] || [ "${RESET_WORKSPACE:-}" = "1" ]; th
   echo "[entrypoint] Workspace synced from image"
 fi
 
+# Sync skills from image on every start (always overwrite to pick up image updates)
+if [ -d /opt/openclaw-skills ]; then
+  mkdir -p "${OPENCLAW_HOME}/skills"
+  cp -rf /opt/openclaw-skills/* "${OPENCLAW_HOME}/skills/" 2>/dev/null || true
+  echo "[entrypoint] Skills synced from image"
+fi
+
 # Render config template with env var substitution
 awk '{
   while (match($0, /\$\{[A-Za-z_][A-Za-z_0-9]*(:-[^}]*)?\}/)) {
