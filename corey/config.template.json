@@ -12,6 +12,7 @@
         "every": "30m",
         "target": "last",
         "activeHours": { "start": "08:00", "end": "23:00", "timezone": "Asia/Taipei" }
+      }
     }
   },
   "models": {
