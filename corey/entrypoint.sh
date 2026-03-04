@@ -29,6 +29,12 @@ if [ -d /opt/openclaw-skills ]; then
   echo "[entrypoint] Skills synced from image"
 fi
 
+# Configure gh as git credential helper (reuses GH_TOKEN for git clone/push/etc.)
+if command -v gh >/dev/null 2>&1 && [ -n "${GH_TOKEN:-}" ]; then
+  gh auth setup-git
+  echo "[entrypoint] Git credential helper configured via gh"
+fi
+
 # Render config template with env var substitution
 awk '{
   while (match($0, /\$\{[A-Za-z_][A-Za-z_0-9]*(:-[^}]*)?\}/)) {
